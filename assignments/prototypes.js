@@ -16,6 +16,7 @@
 */
 
 function GameObject(attributes) {
+  this.name = attributes.name;
   this.createdAt = attributes.createdAt;
   this.dimensions = attributes.dimensions;
 }
@@ -33,13 +34,12 @@ GameObject.prototype.destroy = function(){
 */
 
 function CharacterStats(stats){
+  GameObject.call(this, stats);
   this.healthPoints = stats.healthPoints;
   this.name = stats.name;
-  
-  
 }
 
-//CharacterStats.prototype = object.create(GameObject.prototype);
+CharacterStats.prototype = Object.create(GameObject.prototype);
 CharacterStats.prototype.takeDamage = function(){
   return `${this.name} took damage`;
 }
