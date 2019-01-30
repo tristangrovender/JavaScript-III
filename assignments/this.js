@@ -12,7 +12,7 @@
 
 // Principle 1
 // code example for Window Binding
-let me = {
+let me1 = {
     name: "Tristan", 
     age: 27,
     sayName: function() {
@@ -55,7 +55,7 @@ let sayName = function(){
 };
 
 let tristan = {
-    name: "Tristan"
+    name: "Tristan",
     age: 27
 };
 
