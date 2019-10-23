@@ -24,29 +24,25 @@
 
 // Principle 1
 // code example for Window Binding
-let me = {
-    name: "Tristan", 
-    age: 27,
-    sayName: function() {
-        console.log(this.name);
-    }
-};
 
-sayName();
-
+function sayName(name) {
+    console.log(this);
+    return name;
+}
+sayName("Tristan");
 
 // Principle 2
 // code example for Implicit Binding
 
-let me = {
-    name: "Tristan", 
-    age: 27,
-    sayName: function() {
-        console.log(this.name);
+const me = {
+    greeting: "Hello", 
+    sayHello: function(name) {
+        console.log(`${this.greeting} my name is ${name}`);
+        console.log(this);
     }
 };
 
-me.sayName();
+me.sayHello("Tristan");
 
 // Principle 3
 // code example for New Binding
@@ -58,18 +54,19 @@ let person = function(sex, name, age) {
 };
 
 const tristan = new person("Male", "Tristan", 27);
+console.log(tristan);
+
 
 // Principle 4
 // code example for Explicit Binding
 
-let sayName = function(){
-    console.log("My name is" + this.name);
+const expressName = function(){
+    console.log(`My name is ${this.name}`);
 };
 
-let tristan = {
-    name: "Tristan",
+const tristan2 = {
+    name: "senor Tristan",
     age: 27
 };
 
-sayName.call(tristan);
- 
+expressName.call(tristan2);
